@@ -7,6 +7,7 @@ const Counter = () => {
   const dispatch = useDispatch()
   // useSelector ile state içerisindeki counter verisini alabiliriz.
   const counter = useSelector(state => state.counter)
+  const show = useSelector(state => state.showCounter)
 
   const incrementHandler = () => {
     // Dispatch fonksiyonu ile belirtilen actionlar tetiklenir
@@ -14,21 +15,21 @@ const Counter = () => {
   }
 
   const increaseHandler = () => {
-    // Dispatch fonksiyonu ile belirtilen actionlar tetiklenir
     dispatch({ type: 'increase', amount: 10 })
   }
 
   const decrementHandler = () => {
-    // Dispatch fonksiyonu ile belirtilen actionlar tetiklenir
     dispatch({ type: 'decrement' })
   }
 
-  const toggleCounterHandler = () => { }
+  const toggleCounterHandler = () => {
+    dispatch({ type: 'toggle' })
+  }
 
   return (
     <main className={classes.counter}>
       <h1>Redux Counter</h1>
-      <div className={classes.value}>Counter({counter})</div>
+      {show && <div className={classes.value}>{counter}</div>}
       <div>
         <button onClick={incrementHandler}>Increment</button>
         <button onClick={increaseHandler}>Increase +10</button>
