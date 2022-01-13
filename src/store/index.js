@@ -4,6 +4,7 @@ const INITIAL_STATE = { counter: 0, showCounter: true }
 
 const counterReducer = (state = INITIAL_STATE, action) => {
   if (action.type === 'increment') {
+    // Burada state'ler direk olarak değiştirilmemeli
     return {
       counter: state.counter + 1,
       showCounter: state.showCounter

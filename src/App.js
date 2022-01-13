@@ -1,11 +1,11 @@
-import Counter from './components/Counter'
-import CounterConnect from './components/CounterConnect'
+import CounterRTK from './components/CounterRTK'
 
 function App () {
   return (
     <>
-      <Counter />
-      <CounterConnect />
+      {/* <Counter /> */}
+      {/* <CounterConnect /> */}
+      <CounterRTK />
     </>
   )
 }
