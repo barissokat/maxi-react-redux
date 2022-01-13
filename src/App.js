@@ -1,8 +1,12 @@
 import Counter from './components/Counter'
+import CounterConnect from './components/CounterConnect'
 
 function App () {
   return (
-    <Counter />
+    <>
+      <Counter />
+      <CounterConnect />
+    </>
   )
 }
 
